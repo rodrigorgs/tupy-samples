@@ -1,2 +1,2 @@
 Pillow==9.5.0
-tupy @ git+https://github.com/rodrigorgs/tupy.git@4c509626649423360b9c890552407851edb50855
+tupy @ git+https://github.com/rodrigorgs/tupy.git@5988e2cfc12717a463f472b420a8768e85288801
