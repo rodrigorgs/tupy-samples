@@ -1,0 +1,13 @@
+- Qual a classe do objeto pikachu?
+- Quais são os atributos presentes no objeto pikachu?
+- Quais são os valores iniciais dos atributos de pikachu?
+- Quais são os métodos da pokeball?
+- Quais são as classes dos objetos referenciados pelas variáveis globais?
+- Quais atributos são modificados pelo método evolui da classe Pokemon?
+- Identifique o nome de um método da classe Pokemon que retorna True ou False
+- Quais métodos da classe Pokemon recebem parâmetros?
+- Objetos de qual ou quais classes podem receber dano?
+- Crie uma nova pokeball. Use-a para capturar um pokemon.
+- Crie um novo pókemon a partir da imagem 'bulbasaur.png'. Ele possui os mesmos métodos dos objetos referenciados pelas variáveis pikachu e charmander?
+- Qual o mínimo de ataques que um pokemon precisa desferir para fazer outro pokemon desmaiar?
+- É possível capturar um pokemon desmaiado?

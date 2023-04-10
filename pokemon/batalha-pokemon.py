@@ -31,6 +31,9 @@ class Pokemon(Image):
             pokemon.recebe_dano(self.forca)
         
     def recebe_dano(self, dano):
+        if self.vida <= 0:
+            toast('O pokémon está desmaiado!')
+            return
         self.vida -= dano
         if self.vida <= 0:
             self.vida = 0
@@ -49,6 +52,9 @@ class Pokemon(Image):
         return 0 < self.vida <= 20
 
     def evolui(self):
+        if self.vida <= 0:
+            toast('O pokémon está desmaiado!')
+            return
         self.vida += 10
         self.forca += 10
         if self.file == 'pikachu.png':
