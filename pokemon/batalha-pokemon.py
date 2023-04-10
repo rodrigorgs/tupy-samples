@@ -57,6 +57,10 @@ class Pokemon(Image):
             self.file = 'charmeleon.png'
         elif self.file == 'charmeleon.png':
             self.file = 'charizard.png'
+        elif self.file == 'bulbasaur.png':
+            self.file = 'ivysaur.png'
+        elif self.file == 'ivysaur.png':
+            self.file = 'venusaur.png'
         else:
             self.vida -= 10
             self.forca -= 10
