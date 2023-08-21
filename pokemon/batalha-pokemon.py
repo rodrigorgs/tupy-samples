@@ -13,50 +13,66 @@ class Campo(Image):
 # https://pokemondb.net/sprites
 class Pokemon(Image):
     def __init__(self, file, x, y):
-        self.vida = 100
-        self.forca = 30
+        self._vida = 100
+        self._forca = 30
         self.file = file
         self.x = x
         self.y = y
         self._label = Label("", self.x - 50, self.y + 50)
         self._atualiza_label()
 
+    @property
+    def vida(self):
+        return self._vida
+    @vida.setter
+    def vida(self, value):
+        self._vida = value
+        self._atualiza_label()
+
+    @property
+    def forca(self):
+        return self._forca
+    @forca.setter
+    def forca(self, value):
+        self._forca = value
+        self._atualiza_label()
+        
     def _atualiza_label(self):
-        self._label.text = f"Vida: {self.vida}\nForça: {self.forca}"
+        self._label.text = f"Vida: {self._vida}\nForça: {self._forca}"
 
     def ataca(self, pokemon):
-        if self.vida <= 0:
+        if self._vida <= 0:
             toast('O pokémon está desmaiado!')
         else:
-            pokemon.recebe_dano(self.forca)
+            pokemon.recebe_dano(self._forca)
         
     def recebe_dano(self, dano):
-        if self.vida <= 0:
+        if self._vida <= 0:
             toast('O pokémon está desmaiado!')
             return
-        self.vida -= dano
-        if self.vida <= 0:
-            self.vida = 0
+        self._vida -= dano
+        if self._vida <= 0:
+            self._vida = 0
             self.desmaia()
         self._atualiza_label()
 
     def desmaia(self):
         toast('O pokémon desmaiou!')
-        self.vida = 0
+        self._vida = 0
         self._atualiza_label()
         self.espiral = Espiral()
         self.espiral.x = self.x
         self.espiral.y = self.y
 
     def pode_ser_capturado(self):
-        return 0 < self.vida <= 20
+        return 0 < self._vida <= 20
 
     def evolui(self):
-        if self.vida <= 0:
+        if self._vida <= 0:
             toast('O pokémon está desmaiado!')
             return
-        self.vida += 10
-        self.forca += 10
+        self._vida += 10
+        self._forca += 10
         if self.file == 'pikachu.png':
             self.file = 'raichu.png'
         elif self.file == 'charmander.png':
@@ -68,8 +84,8 @@ class Pokemon(Image):
         elif self.file == 'ivysaur.png':
             self.file = 'venusaur.png'
         else:
-            self.vida -= 10
-            self.forca -= 10
+            self._vida -= 10
+            self._forca -= 10
         self._atualiza_label()
     
 
